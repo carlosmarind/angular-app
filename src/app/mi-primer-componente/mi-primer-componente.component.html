@@ -6,9 +6,19 @@
 <button type="button" (click)="saludar()">Saludar</button>
 <app-mi-componente-hijo (mensajeSalida)="recibirMensaje($event)" [mensaje]="mensajePadre"></app-mi-componente-hijo>
 
-<div *ngIf="esEspecial" >
+<div *ngIf="esEspecial">
     <p>este mensaje esEspecial es verdadero</p>
 </div>
 <div *ngIf="!esEspecial">
     <p>este mensaje esEspecial es false</p>
 </div>
+
+<h2> uso de ngFor</h2>
+<section *ngIf="esEspecial">
+    <p *ngFor="let persona of personas">
+        {{persona.nombre}} 
+        - {{persona.edad}} 
+        - {{persona.vacuna ? 'vacunado': 'no vacunado'}} 
+        - {{persona.edad > 18 ? 'Mayor de edad': 'Menor de edad' }}
+    </p>
+</section>

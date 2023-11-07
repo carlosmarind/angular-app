@@ -8,6 +8,33 @@ import { MiServicioService } from '../mi-servicio.service';
 })
 export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
 
+  personas = [
+    {
+      id: 0,
+      nombre: "Alexa",
+      edad: 22,
+      vacuna: true,
+    },
+    {
+      id: 1,
+      nombre: "Romina",
+      edad: 32,
+      vacuna: false,
+    },
+    {
+      id: 3,
+      nombre: "Maximo",
+      edad: 42,
+      vacuna: true,
+    },
+    {
+      id: 4,
+      nombre: "Joao",
+      edad: 12,
+      vacuna: false,
+    }
+  ]
+
   servicio: MiServicioService;
   esEspecial = true;
   public mensaje = "Alexa";
