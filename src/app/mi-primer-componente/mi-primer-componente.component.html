@@ -1,0 +1,14 @@
+<p>mi-primer-componente funciona!!!</p>
+<p>Bienvenid@ {{mensaje}} </p>
+<p [ngStyle]="{'color': colorStyle}">{{mensajeinicializacion}}</p>
+<img [ngClass]="{'miclase-special' : esEspecial}" [alt]="textoImagen" [src]="urlImagen">
+<input placeholder="ingrese nombre" ng-disabled="esEspecial" />
+<button type="button" (click)="saludar()">Saludar</button>
+<app-mi-componente-hijo (mensajeSalida)="recibirMensaje($event)" [mensaje]="mensajePadre"></app-mi-componente-hijo>
+
+<div *ngIf="esEspecial" >
+    <p>este mensaje esEspecial es verdadero</p>
+</div>
+<div *ngIf="!esEspecial">
+    <p>este mensaje esEspecial es false</p>
+</div>
