@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
 import { MiComponenteHijoComponent } from './mi-componente-hijo/mi-componente-hijo.component';
+import { TextColorDirective } from './text-color.directive';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MiPrimerComponenteComponent,
-    MiComponenteHijoComponent
+    MiComponenteHijoComponent,
+    TextColorDirective
   ],
   imports: [
     BrowserModule,

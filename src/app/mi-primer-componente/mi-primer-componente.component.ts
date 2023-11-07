@@ -34,7 +34,7 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
       vacuna: false,
     }
   ]
-
+  color = "rojo";
   servicio: MiServicioService;
   esEspecial = true;
   public mensaje = "Alexa";

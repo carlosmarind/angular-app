@@ -16,9 +16,48 @@
 <h2> uso de ngFor</h2>
 <section *ngIf="esEspecial">
     <p *ngFor="let persona of personas">
-        {{persona.nombre}} 
-        - {{persona.edad}} 
-        - {{persona.vacuna ? 'vacunado': 'no vacunado'}} 
+        {{persona.nombre}}
+        - {{persona.edad}}
+        - {{persona.vacuna ? 'vacunado': 'no vacunado'}}
         - {{persona.edad > 18 ? 'Mayor de edad': 'Menor de edad' }}
     </p>
 </section>
+
+<h2>uso de ngswitch</h2>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'rojo'">
+        <section *ngIf="esEspecial">
+            <p *ngFor="let persona of personas">
+                {{persona.nombre}}
+                - {{persona.edad}}
+                - {{persona.vacuna ? 'vacunado': 'no vacunado'}}
+                - {{persona.edad > 18 ? 'Mayor de edad': 'Menor de edad' }}
+            </p>
+        </section>
+    </div>
+    <p *ngSwitchCase="'azul'">El color es azul</p>
+    <p *ngSwitchCase="'verde'">El color es verde</p>
+    <p *ngSwitchDefault>El color es desconocido</p>
+</div>
+
+<h2>uso de ng-template y ng-container</h2>
+
+<ng-template #miTemplate let-param1="nombre" let-param2="edad">
+    <p>este es mi template. Nombre: {{param1}}, Edad: {{param2}}</p>
+</ng-template>
+
+<ng-container *ngFor="let persona of personas">
+    <ng-container *ngTemplateOutlet="miTemplate ; context:{nombre: persona.nombre , edad: persona.edad} "></ng-container>
+</ng-container>
+
+<h2>uso ngIf con template</h2>
+<div *ngIf="esEspecial; then TesEspecial else TnoEsEspecial"></div>
+
+<ng-template #TesEspecial>
+    <p>Este es mi template verdadero</p>
+</ng-template>
+
+<ng-template #TnoEsEspecial>
+    <p>Este es mi template false</p>
+</ng-template>
