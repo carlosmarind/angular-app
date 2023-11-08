@@ -1,5 +1,5 @@
 <p>mi-primer-componente funciona!!!</p>
-<p>Bienvenid@ {{mensaje}} </p>
+<p>Bienvenido {{mensaje}} </p>
 <p [ngStyle]="{'color': colorStyle}">{{mensajeinicializacion}}</p>
 <img [ngClass]="{'miclase-special' : esEspecial}" [alt]="textoImagen" [src]="urlImagen">
 <input placeholder="ingrese nombre" ng-disabled="esEspecial" />
@@ -48,7 +48,8 @@
 </ng-template>
 
 <ng-container *ngFor="let persona of personas">
-    <ng-container *ngTemplateOutlet="miTemplate ; context:{nombre: persona.nombre , edad: persona.edad} "></ng-container>
+    <ng-container
+        *ngTemplateOutlet="miTemplate ; context:{nombre: persona.nombre , edad: persona.edad} "></ng-container>
 </ng-container>
 
 <h2>uso ngIf con template</h2>
@@ -61,3 +62,8 @@
 <ng-template #TnoEsEspecial>
     <p>Este es mi template false</p>
 </ng-template>
+
+<h2>uso de directiva textColor</h2>
+
+<p appTextColor="red">Este texto es rojo.</p>
+<p appTextColor="green">Este texto es verde.</p>
