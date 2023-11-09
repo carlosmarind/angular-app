@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CapitalizarPipe } from '../capitalizar.pipe';
-import { UpperCasePipe } from '@angular/common';
+import { CapitalizarPipe } from 'src/app/pipes/capitalizar.pipe';
+
+
 
 @Component({
   selector: 'app-mi-componente-hijo',
