@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MiServicioService } from '../../servicios/mi-servicio.service';
+import { MiServicioService } from '../../services/mi-servicio.service';
 
 @Component({
   selector: 'app-mi-primer-componente',
