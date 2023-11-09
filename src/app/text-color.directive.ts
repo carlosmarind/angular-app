@@ -1,15 +1,18 @@
-import { AfterViewInit, Directive, ElementRef, Input } from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[appTextColor]'
 })
-export class TextColorDirective implements AfterViewInit {
-  @Input('appTextColor') textColor: string = 'black';
+export class TextColorDirective {
 
-  constructor(private el: ElementRef) { }
+  @Input('appTextColor') textColor: string = "green";
 
-  ngAfterViewInit() {
-    this.el.nativeElement.style.color = this.textColor;
+  constructor(private elemento: ElementRef) {
+    this.elemento.nativeElement.style.color = "green";
   }
-}
 
+  ngOnInit() {
+    this.elemento.nativeElement.style.color = this.textColor;
+  }
+
+}

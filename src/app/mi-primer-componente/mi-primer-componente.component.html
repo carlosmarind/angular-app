@@ -1,10 +1,12 @@
 <p>mi-primer-componente funciona!!!</p>
 <p>Bienvenido {{mensaje}} </p>
-<p [ngStyle]="{'color': colorStyle}">{{mensajeinicializacion}}</p>
+
 <img [ngClass]="{'miclase-special' : esEspecial}" [alt]="textoImagen" [src]="urlImagen">
+<p [ngStyle]="{'color': colorStyle}">{{mensajeinicializacion}}</p>
 <input placeholder="ingrese nombre" ng-disabled="esEspecial" />
 <button type="button" (click)="saludar()">Saludar</button>
-<app-mi-componente-hijo (mensajeSalida)="recibirMensaje($event)" [mensaje]="mensajePadre"></app-mi-componente-hijo>
+<app-mi-componente-hijo (mensajeSalida)="recibirMensaje($event)"
+    [mensaje]="mensajePadre | lowercase"></app-mi-componente-hijo>
 
 <div *ngIf="esEspecial">
     <p>este mensaje esEspecial es verdadero</p>
@@ -65,5 +67,25 @@
 
 <h2>uso de directiva textColor</h2>
 
-<p appTextColor="red">Este texto es rojo.</p>
-<p appTextColor="green">Este texto es verde.</p>
+<p appTextColor="green">este texto es de color verde</p>
+<p appTextColor="red">este texto es de color rojo</p>
+<p appTextColor>este texto es de color rojo</p>
+
+<h2>uso de pipes</h2>
+<p>ejemplo mensaje sin pipe: {{mensajePipes }}</p>
+<p>ejemplo slice pipe: {{mensajePipes | slice:0:8000}}</p>
+<p>ejemplo number pipe: {{numeroPipes | number: ''}}</p>
+<p>ejemplo currecy pipe: {{numeroPipes | currency: '':'symbol':'0.1-2':'es-MX'}}</p>
+<p>ejemplo percent pipe: {{numeroPipes | percent:'0.3-4'}}</p>
+<p>ejemplo json pipe: {{personas | json}}</p>
+<p>ejemplo lowercase pipe: {{mensajePipes | lowercase}}</p>
+<p>ejemplo uppercase pipe: {{mensajePipes | uppercase}}</p>
+<p>ejemplo capitalizar pipe: {{mensajePipes | capitalizar:'<'}}</p>
+<p>ejemplo de pipe para fechas (date): {{fechaActual |date: 'dd-MM-yyyy h:mm':'': 'es-MX'}}</p>
+
+<h3> ejemplo pipe impuro</h3>
+<p>La cantidad de elementos fechas es {{ fechas | numElement}}</p>
+<button (click)="addDate()"> Añadir fecha</button>
+<div *ngFor="let fecha of fechas">
+        <p>{{fecha | date:'dd/MM/yyyy hh:mm:ss'}}</p>
+</div>

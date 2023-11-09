@@ -44,6 +44,16 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
   mensajeinicializacion = ""
   colorStyle = 'red';
   mensajePadre = "hola a todos desde el componente padre"
+  
+  mensajePipes = "este mensaje SeRa  Modificado por los pipes"
+  numeroPipes = 13.56;
+  fechaActual = new Date();
+
+  fechas :Date [] =[];
+
+  user = {
+    name : 'Carlos'
+  }
 
   constructor(miServicio: MiServicioService) {
     this.servicio = miServicio;
@@ -60,6 +70,14 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
   saludar() {
     this.mensaje = this.servicio.saludar();
     this.mensajePadre = this.mensaje;
+    // referencia
+    
+    let userDos = {...this.user};
+    console.log( userDos == this.user);
+
+    userDos.name = "Alexa";
+    console.log('imprimiendo user', this.user);
+    console.log('imprimiendo userDos',userDos);
   }
 
   recibirMensaje(mensaje: string) {
@@ -68,5 +86,9 @@ export class MiPrimerComponenteComponent implements OnInit, OnDestroy {
 
     this.esEspecial = !this.esEspecial;
 
+  }
+
+  addDate(){
+    this.fechas.push(new Date());
   }
 }

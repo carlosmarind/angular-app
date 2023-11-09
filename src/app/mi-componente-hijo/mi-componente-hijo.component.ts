@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CapitalizarPipe } from '../capitalizar.pipe';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-mi-componente-hijo',
@@ -9,8 +11,11 @@ export class MiComponenteHijoComponent {
   @Input() mensaje: string = "";
   @Output() mensajeSalida = new EventEmitter<string>();
 
+  constructor(private capitalizar: CapitalizarPipe){}
 
   handleClick() {
-    this.mensajeSalida.emit("hola desde el hijo");
+    let mensaje = "hola desde el componente hijo"
+    let mensajeCapitalizado = this.capitalizar.transform(mensaje,'');
+    this.mensajeSalida.emit(mensajeCapitalizado);
   }
 }
