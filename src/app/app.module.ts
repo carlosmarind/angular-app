@@ -11,6 +11,10 @@ import { MiComponenteHijoComponent } from './components/mi-componente-hijo/mi-co
 import { TextColorDirective } from './directives/text-color.directive';
 import { CapitalizarPipe } from './pipes/capitalizar.pipe';
 import { NumElementPipe } from './pipes/num-element.pipe';
+import { HomeComponent } from './components/home/home.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardGeneralComponent } from './components/dashboard-general/dashboard-general.component';
+import { DashboardDetailsComponent } from './components/dashboard-details/dashboard-details.component';
 
 
 @NgModule({
@@ -21,6 +25,10 @@ import { NumElementPipe } from './pipes/num-element.pipe';
     TextColorDirective,
     CapitalizarPipe,
     NumElementPipe,
+    HomeComponent,
+    DashboardComponent,
+    DashboardGeneralComponent,
+    DashboardDetailsComponent,
   ],
   imports: [
     BrowserModule,
