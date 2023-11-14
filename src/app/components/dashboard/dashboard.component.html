@@ -1,7 +1,7 @@
 <p>Dashboard principal , nuestra aplicacion se ejecuta en modo {{ambiente}}</p>
 <nav>
     <ul>
-        <li><a routerLink="general">Dashboard General</a></li>
+        <li><a routerLink="general" [queryParams]="parametros">Dashboard General</a></li>
         <li><a [routerLink]="[ambiente]">Dashboard detalle de ambiente</a></li>
     </ul>
 </nav>

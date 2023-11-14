@@ -15,6 +15,9 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardGeneralComponent } from './components/dashboard-general/dashboard-general.component';
 import { DashboardDetailsComponent } from './components/dashboard-details/dashboard-details.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -29,6 +32,9 @@ import { DashboardDetailsComponent } from './components/dashboard-details/dashbo
     DashboardComponent,
     DashboardGeneralComponent,
     DashboardDetailsComponent,
+    NotFoundComponent,
+    AdminDashboardComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
