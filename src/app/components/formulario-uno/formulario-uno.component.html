@@ -1,0 +1,43 @@
+<p>formulario-uno works!</p>
+
+{{ formData | json}}
+
+<form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
+
+    <div>
+        <label for="name">Name</label>
+        <input #name="ngModel" type="text" id="name" name="name" [(ngModel)]="formData.name" required minlength="5">
+
+        <div *ngIf="(name.touched ) && name.hasError('required')">El campo nombre es requerido</div>
+        <div *ngIf="(name.touched || myform.submitted) && name.hasError('minlength')">El campo nombre debe tener al menos 5 caracteres</div>
+    </div>
+    <div>
+        <label for="lastName">Last Name</label>
+        <input #lastName="ngModel" type="text" id="lastName" name="lastName" [(ngModel)]="formData.lastName" pattern="[pP]latano|[cC]ereza">
+
+        <div *ngIf="(lastName.touched || myform.submitted) && lastName.hasError('pattern')">El campo last name no cumple con el patro de expresion</div>
+    </div>
+    <div>
+        <label for="birthDate">Birth Date</label>
+        <input type="date" id="birthDate" name="birthDate" [(ngModel)]="formData.birthDate">
+    </div>
+    <div>
+        <label>Genero</label>
+        
+        <input type="radio" id="male" name="gender" value="male" [(ngModel)]="formData.gender">
+        <label for="male">Male</label>
+        
+        <input type="radio" id="female" name="gender" value="female" [(ngModel)]="formData.gender">
+        <label for="female">Female</label>
+    </div>
+
+    <div>
+        <label for="calificacion">Calificacion</label>
+        <input #calificacion="ngModel" type="number" id="calificacion" name="calificacion" [(ngModel)]="formData.calificacion" min="5" max="20">
+
+        <div *ngIf="(calificacion.touched || myform.submitted) && calificacion.hasError('min')">El valor no puede ser inferior a 5</div>
+        <div *ngIf="(calificacion.touched || myform.submitted) && calificacion.hasError('max')">El valor no puede ser superior a 20</div>
+    </div>
+
+    <button type="submit">Enviar</button>
+</form>

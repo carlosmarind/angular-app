@@ -8,11 +8,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { authGuard } from './components/auth.guard';
 import { LoginComponent } from './components/login/login.component';
+import { FormularioUnoComponent } from './components/formulario-uno/formulario-uno.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminDashboardComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'formulario-uno', component: FormularioUnoComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
