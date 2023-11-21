@@ -1,5 +1,5 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
 import es from '@angular/common/locales/es';
@@ -18,7 +18,6 @@ import { DashboardDetailsComponent } from './components/dashboard-details/dashbo
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { LoginComponent } from './components/login/login.component';
-import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/interfaces/user';
 import { ApiBackendService } from 'src/app/services/api-backend.service';
 
 @Component({
@@ -9,12 +9,12 @@ import { ApiBackendService } from 'src/app/services/api-backend.service';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  users: any;
+  users: User[] = [];
 
-  formData: { name: string, email: string } = {
+  formData = {
     name: '',
     email: ''
-  };
+  }
 
   constructor(private backend: ApiBackendService) { }
 
