@@ -1,1 +1,15 @@
 <p>admin-dashboard funcionando, y protegido</p>
+
+<div *ngFor="let user of users">
+    <span>{{ user.name }} - {{ user.email}}</span>
+</div>
+
+<form (ngSubmit)="onSubmit()">
+    <label for="name">Nombre</label>
+    <input type="text" id="name" name="name" [(ngModel)]="formData.name">
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" [(ngModel)]="formData.email">
+
+    <button type="submit">Enviar</button>
+</form>
