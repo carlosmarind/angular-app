@@ -9,12 +9,14 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { authGuard } from './components/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { FormularioUnoComponent } from './components/formulario-uno/formulario-uno.component';
+import { FormularioDosComponent } from './components/formulario-dos/formulario-dos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'admin', component: AdminDashboardComponent, canActivate: [authGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'formulario-uno', component: FormularioUnoComponent },
+  { path: 'formulario-dos', component: FormularioDosComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [

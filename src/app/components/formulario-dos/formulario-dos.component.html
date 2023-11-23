@@ -1,0 +1,48 @@
+<p>formulario-dos works!</p>
+
+<h2>Formulario reactivo usando Control</h2>
+<section>
+    <h2>Mi Formulario de pruebas</h2>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" placeholder="Nombre" [formControl]="nombre">
+</section>
+
+<button type="button" (click)="actualizarnombre()">Actualizar Nombre</button>
+{{ nombre.value }}
+{{ nombre.valueChanges | async}}
+
+<h2>Formulario reactivo usando grupos</h2>
+
+<p> appForm: {{ appForm.value | json}}</p>
+<p> appFormBuilder: {{ appFormBuilder.value | json}}</p>
+<p>{{ appFormBuilder.status }}</p>
+
+<form [formGroup]="appFormBuilder">
+    <label for="first-name">Primer nombre:</label>
+    <input type="text" id="first-name" name="first-name" placeholder="Primer nombre" formControlName="firstName">
+    <div *ngIf="appFormBuilder.get('firstName')?.invalid && appFormBuilder.get('firstName')?.touched && appFormBuilder.get('firstName')?.hasError('forbiddenName')">El campo tiene un nombre prohibido</div>
+
+    <label for="last-name">Apellido:</label>
+    <input type="text" id="last-name" name="last-name" placeholder="Apellido" formControlName="lastName">
+
+    <div formGroupName="address">
+        <label for="street">Calle:</label>
+        <input type="text" id="street" name="street" placeholder="Calle" formControlName="street">
+
+        <label for="city">Ciudad:</label>
+        <input type="text" id="city" name="city" placeholder="Ciudad" formControlName="city">
+    </div>
+
+    <div formArrayName="aliases">
+        <h3>Define tus apodos</h3>
+        <button type="button" (click)="addAlias()">Agregar Apodo</button>
+        <div *ngFor="let alias of aliases.controls; let i=index;">
+            <label for="alias-{{i}}">Apodo:</label>
+            <input type="text" id="alias-{{i}}" [formControlName]="i">
+        </div>
+    </div>
+
+    <button type="submit" [disabled]="!appFormBuilder.valid">Submit</button>
+    <button type="button" (click)="updateProfile()">Actualizar</button>
+
+</form>
