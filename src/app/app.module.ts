@@ -2,6 +2,8 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+
 import es from '@angular/common/locales/es';
 registerLocaleData(es);
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +23,8 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioUnoComponent } from './components/formulario-uno/formulario-uno.component';
 import { FormularioDosComponent } from './components/formulario-dos/formulario-dos.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { CollapsableComponent } from './components/collapsable/collapsable.component';
 
 
 @NgModule({
@@ -40,13 +44,16 @@ import { FormularioDosComponent } from './components/formulario-dos/formulario-d
     LoginComponent,
     FormularioUnoComponent,
     FormularioDosComponent,
+    TodoComponent,
+    CollapsableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     CapitalizarPipe,

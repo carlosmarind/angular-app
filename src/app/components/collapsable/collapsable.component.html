@@ -1,0 +1,7 @@
+<nav>
+    <button type="button" (click)="toggle()">Cambiar estado abierto/cerrado</button>
+</nav>
+
+<div [@openClose]="isOpen ? 'open' : 'closed'">
+    <p> Esta caja esta {{ isOpen ? 'Abierta' : 'Cerrada'}}</p>
+</div>

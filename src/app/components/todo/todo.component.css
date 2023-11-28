@@ -1,0 +1,34 @@
+.form-control {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    height: 50px;
+    border-color: rgba(255, 255, 255, 0.5);
+    font-size: 28px;
+    padding-left: 10px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #9ecaed;
+    box-shadow: 0 0 10px #9ecaed;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 50px;
+}
+
+.list-group-item:hover {
+    background-color: #e7e7e7;
+}

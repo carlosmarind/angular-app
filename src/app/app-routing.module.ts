@@ -10,6 +10,8 @@ import { authGuard } from './components/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { FormularioUnoComponent } from './components/formulario-uno/formulario-uno.component';
 import { FormularioDosComponent } from './components/formulario-dos/formulario-dos.component';
+import { TodoComponent } from './components/todo/todo.component';
+import { CollapsableComponent } from './components/collapsable/collapsable.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'formulario-uno', component: FormularioUnoComponent },
   { path: 'formulario-dos', component: FormularioDosComponent },
+  { path: 'animation-todo', component: TodoComponent },
+  { path: 'animation-collapsable', component: CollapsableComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
