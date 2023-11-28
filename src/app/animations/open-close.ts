@@ -16,8 +16,6 @@ export const openClose = trigger('openClose', [
     ]),
 ]);
 
-
-
 export const transitionAnimation = animation(
     [
         animate("{{time}}",
