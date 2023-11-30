@@ -1,0 +1,30 @@
+<div matBadge="6" matBadgeOverlap="false" class="demo-section"> Texto con un badge</div>
+
+<div matBadge="6" matBadgeSize="large" matBadgeOverlap="false" class="demo-section"> Texto con un badge grande</div>
+
+<div class="demo-section">
+    boton con un badge a la izquieda
+    <button mat-raised-button color="primary" matBadge="3" matBadgePosition="before"
+        matBadgeColor="accent">Accion</button>
+</div>
+
+<div class="demo-section">
+    Boton con visibilidad de badge
+    <button mat-raised-button [matBadgeHidden]="hidden" (click)="toggleBadgeVisibility()" color="primary" matBadge="3"
+        matBadgePosition="before" matBadgeColor="accent">Accion</button>
+</div>
+
+
+<div matBadge="6" matBadgeSize="small" matBadgeColor="primary" matBadgeOverlap="false" class="demo-section"> Texto con
+    un badge pequeño en color primario</div>
+<div matBadge="6" matBadgeSize="small" matBadgeColor="accent" matBadgeOverlap="false" class="demo-section"> Texto con un
+    badge pequeño en color accent</div>
+<div matBadge="6" matBadgeSize="small" matBadgeColor="warn" matBadgeOverlap="false" class="demo-section">Texto con un
+    badge pequeño en color warn</div>
+
+
+<div class="demo-section">
+    boton con un badge a la izquieda
+    <button mat-raised-button color="primary" matBadge="3" matBadgePosition="below after"
+        matBadgeColor="accent">Accion</button>
+</div>

@@ -12,6 +12,12 @@ import { FormularioUnoComponent } from './components/formulario-uno/formulario-u
 import { FormularioDosComponent } from './components/formulario-dos/formulario-dos.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { CollapsableComponent } from './components/collapsable/collapsable.component';
+import { StandaloneComponent } from './components/material/standalone/standalone.component';
+import { AutocompleteComponent } from './components/material/autocomplete/autocomplete.component';
+import { BadgeComponent } from './components/material/badge/badge.component';
+import { BottomSheetComponent } from './components/material/bottom-sheet/bottom-sheet.component';
+import { ButtonComponent } from './components/material/button/button.component';
+import { CardComponent } from './components/material/card/card.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -21,6 +27,12 @@ const routes: Routes = [
   { path: 'formulario-dos', component: FormularioDosComponent },
   { path: 'animation-todo', component: TodoComponent },
   { path: 'animation-collapsable', component: CollapsableComponent },
+  { path: 'material-standalone', component: StandaloneComponent },
+  { path: 'material-autocomplete', component: AutocompleteComponent },
+  { path: 'material-badge', component: BadgeComponent },
+  { path: 'material-bsheet', component: BottomSheetComponent },
+  { path: 'material-button', component: ButtonComponent },
+  { path: 'material-card', component: CardComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [

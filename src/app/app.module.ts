@@ -2,7 +2,7 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { registerLocaleData } from '@angular/common';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import es from '@angular/common/locales/es';
 registerLocaleData(es);
@@ -25,7 +25,7 @@ import { FormularioUnoComponent } from './components/formulario-uno/formulario-u
 import { FormularioDosComponent } from './components/formulario-dos/formulario-dos.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { CollapsableComponent } from './components/collapsable/collapsable.component';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -53,7 +53,7 @@ import { CollapsableComponent } from './components/collapsable/collapsable.compo
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [
     CapitalizarPipe,

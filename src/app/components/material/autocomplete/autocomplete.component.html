@@ -1,0 +1,18 @@
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Estado</mat-label>
+        <input type="text" placeholder="Elge uno" aria-label="Number" matInput [formControl]="stateCtrl"
+            [matAutocomplete]="referencia">
+
+        <mat-autocomplete #referencia="matAutocomplete">
+
+            <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
+                <img class="example-option-img" aria-hidden [src]="state.flag" height="25">
+                <span>{{state.name}}</span> |
+                <small>Habitantes: {{state.population}}</small>
+            </mat-option>
+
+        </mat-autocomplete>
+
+    </mat-form-field>
+</form>
