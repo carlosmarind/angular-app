@@ -22,6 +22,8 @@ import { IconsComponent } from './components/material/icons/icons.component';
 import { TooltipsComponent } from './components/material/tooltips/tooltips.component';
 import { TabsComponent } from './components/material/tabs/tabs.component';
 import { GridsComponent } from './components/material/grids/grids.component';
+import { TableComponent } from './components/material/table/table.component';
+import { MenuComponent } from './components/material/menu/menu.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -41,6 +43,8 @@ const routes: Routes = [
   { path: 'material-tooltip', component: TooltipsComponent },
   { path: 'material-tabs', component: TabsComponent },
   { path: 'material-grids', component: GridsComponent },
+  { path: 'material-table', component: TableComponent },
+  { path: 'material-menu', component: MenuComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [
