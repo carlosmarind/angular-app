@@ -1,0 +1,76 @@
+<mat-grid-list cols="2" rowHeight="2:1" gutterSize="1px">
+    <mat-grid-tile>
+        <mat-grid-tile-header>
+            <h3>titulo 1</h3>
+        </mat-grid-tile-header>
+        1
+        <mat-grid-tile-footer>footer 1</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-grid-tile-header>
+            <h3>titulo 2</h3>
+        </mat-grid-tile-header>
+        2
+        <mat-grid-tile-footer>footer 2</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-grid-tile-header>
+            <h3>titulo 3</h3>
+        </mat-grid-tile-header>
+        3
+        <mat-grid-tile-footer>footer 3</mat-grid-tile-footer>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <mat-grid-tile-header>
+            <h3>titulo 4</h3>
+        </mat-grid-tile-header>
+        4
+        <mat-grid-tile-footer>footer 4</mat-grid-tile-footer>
+    </mat-grid-tile>
+</mat-grid-list>
+
+
+<div class="grid-container">
+    <h3>Grid con configuracion mediante objeto</h3>
+    <mat-grid-list cols="4" rowHeight="100px">
+        <mat-grid-tile *ngFor="let tile of tiles" [colspan]="tile.cols" [rowspan]="tile.rows"
+            [style.background]="tile.color">
+            {{tile.text}}
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+
+<div class="grid-container">
+    <h3>Grid con configuracion mediante componentes</h3>
+    <mat-grid-list cols="2" rowHeight="800px" gutterSize="1px">
+        <mat-grid-tile>
+            <mat-grid-tile-header>
+                <h3>Componente botones</h3>
+            </mat-grid-tile-header>
+            <app-button></app-button>
+            <mat-grid-tile-footer>footer Componente botones</mat-grid-tile-footer>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-grid-tile-header>
+                <h3>Componente de badges</h3>
+            </mat-grid-tile-header>
+            <app-badge> </app-badge>
+            <mat-grid-tile-footer>footer Componente de badges</mat-grid-tile-footer>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-grid-tile-header>
+                <h3>Componente de autocomplete</h3>
+            </mat-grid-tile-header>
+            <app-autocomplete></app-autocomplete>
+            <mat-grid-tile-footer>footer Componente de autocomplete</mat-grid-tile-footer>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-grid-tile-header>
+                <h3>Componente de tarjeta</h3>
+            </mat-grid-tile-header>
+            <app-card></app-card>
+            <mat-grid-tile-footer>footer Componente de tarjeta</mat-grid-tile-footer>
+        </mat-grid-tile>
+    </mat-grid-list>
+
+</div>

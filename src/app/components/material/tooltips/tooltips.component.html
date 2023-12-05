@@ -1,0 +1,32 @@
+<div>
+    <h3>Tooltip basico</h3>
+    <button mat-raised-button color="accent" matTooltip="mi mensaje de accion">Accion</button>
+</div>
+<div>
+    <h3>Tooltip de formulario con seleccion de posicion</h3>
+    <mat-form-field>
+        <mat-label>Posicion del tooltip</mat-label>
+        <mat-select [formControl]="position">
+            <mat-option *ngFor="let positionOption of positionOptions"
+                [value]="positionOption">{{positionOption}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button mat-raised-button #tooltip="matTooltip" matTooltip="informacion de la accion"
+        [matTooltipPosition]="position.value!" matTooltipHideDelay="1000" [matTooltipDisabled]="disabled.value"
+        (click)="accion()">Accion</button>
+    <mat-checkbox [formControl]="disabled">Deshabilitar tooltip</mat-checkbox>
+</div>
+
+<div>
+    <span>Presiona un boton en los siguientes botones para:</span>
+    <button mat-raised-button (click)="tooltip.show()" color="primary">Mostrar</button>
+    <button mat-raised-button (click)="tooltip.hide()" color="primary">Ocultar</button>
+    <button mat-raised-button (click)="tooltip.toggle()" color="primary">Mostrar/Ocultar</button>
+</div>
+
+<div class="formulario-label">
+    <mat-form-field>
+        <mat-label matTooltip="Informacion de la accion"> posicion de tooltip</mat-label>
+        <input matInput placeholder="Tooltip en un input">
+    </mat-form-field>
+</div>

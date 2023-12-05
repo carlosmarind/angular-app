@@ -18,6 +18,10 @@ import { BadgeComponent } from './components/material/badge/badge.component';
 import { BottomSheetComponent } from './components/material/bottom-sheet/bottom-sheet.component';
 import { ButtonComponent } from './components/material/button/button.component';
 import { CardComponent } from './components/material/card/card.component';
+import { IconsComponent } from './components/material/icons/icons.component';
+import { TooltipsComponent } from './components/material/tooltips/tooltips.component';
+import { TabsComponent } from './components/material/tabs/tabs.component';
+import { GridsComponent } from './components/material/grids/grids.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +37,10 @@ const routes: Routes = [
   { path: 'material-bsheet', component: BottomSheetComponent },
   { path: 'material-button', component: ButtonComponent },
   { path: 'material-card', component: CardComponent },
+  { path: 'material-icons', component: IconsComponent },
+  { path: 'material-tooltip', component: TooltipsComponent },
+  { path: 'material-tabs', component: TabsComponent },
+  { path: 'material-grids', component: GridsComponent },
   {
     path: 'dashboard', component: DashboardComponent,
     children: [

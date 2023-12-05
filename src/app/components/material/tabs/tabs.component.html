@@ -1,0 +1,51 @@
+<div>
+    <mat-tab-group>
+        <mat-tab label="Primera"> Contenido 1 </mat-tab>
+        <mat-tab label="Segunda"> Contenido 2 </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>thumb_up</mat-icon>
+                Tercera
+            </ng-template>
+            Contenido 3
+        </mat-tab>
+    </mat-tab-group>
+</div>
+
+<div class="ejemplo-formulario-tabs">
+    <mat-form-field>
+        <mat-label>El tab seleccionado</mat-label>
+        <input matInput placeholder="indice" type="number" [formControl]="selected">
+    </mat-form-field>
+    <button mat-stroked-button (click)="addTab(seleccionarAlAgregar.checked)">Nuevo Tab</button>
+    <mat-checkbox #seleccionarAlAgregar>Seleccion el tab al crearlo</mat-checkbox>
+
+    <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+        <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+            Contenido del tab {{index}} - {{tab}}
+            <button mat-stroked-button (click)="removeTab(index)">Eliminar Tab</button>
+        </mat-tab>
+    </mat-tab-group>
+
+</div>
+
+
+<div class="ejemplo-formulario-tabs-componentes">
+    <mat-tab-group>
+        <mat-tab label="tooltip">
+            <ng-template matTabContent>
+                <app-tooltips></app-tooltips>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="botones">
+            <ng-template matTabContent>
+                <app-button></app-button>
+            </ng-template>
+        </mat-tab>
+        <mat-tab label="tarjetas">
+            <ng-template matTabContent>
+                <app-card></app-card>
+            </ng-template>
+        </mat-tab>
+    </mat-tab-group>
+</div>
